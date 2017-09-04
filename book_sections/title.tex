@@ -1,0 +1,23 @@
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperwidth]{background}};
+\draw (current page.center) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering
+%% The Team Number and Team Name must appear on the outside of the Engineering Notebook.
+Team 0418 I'm a teapot  % Book title
+\\[15pt]
+{\Large 
+%% Season year and challange
+2017-2018 Relic Recovery % Subtitle
+}\\[20pt] 
+{\huge 
+%% Meeting Location
+Chateau de Chambord  % Author name
+}}};
+\end{tikzpicture}
+\vfill
+\endgroup

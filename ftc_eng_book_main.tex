@@ -1,0 +1,221 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.3 (8/8/17)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+\usepackage{listings}
+\usepackage{color}
+
+%% from https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+	backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+	basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+	breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+	breaklines=true,                 % sets automatic line breaking
+	captionpos=b,                    % sets the caption-position to bottom
+	commentstyle=\color{mygreen},    % comment style
+	deletekeywords={...},            % if you want to delete keywords from the given language
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	frame=single,	                   % adds a frame around the code
+	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\color{blue},       % keyword style
+	language=Octave,                 % the language of the code
+	morekeywords={*,...},            % if you want to add more keywords to the set
+	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+	numbersep=5pt,                   % how far the line-numbers are from the code
+	numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,          % underline spaces within strings only
+	showtabs=false,                  % show tabs within strings adding particular underscores
+	stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+	stringstyle=\color{mymauve},     % string literal style
+	tabsize=2,	                   % sets default tabsize to 2 spaces
+	title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\begin{document}
+%  Document EVERYTHING. 
+%Include the time after you finish your build
+%and all the way up to Competition, 
+% as well as between Competitions. 
+%If your Team plans on competing in multiple events for the season, what are you doing to improve your performance? 
+%How are your outreach efforts? 
+%How is your Team  investing its time in between the Competitions? 
+%Do not stop using the Engineering Notebook once the robot is completed.  
+
+\input{book_sections/title}
+\input{book_sections/copyright}
+\input{book_sections/executive_summary}
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\usechapterimagefalse % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+\chapterimage{chapter_head_1.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%The Engineering Notebook must be divided into multiple sections, including:  
+%An Engineering Section that includes the Robot design processes (required). 
+\part{Engineering Section}
+\input{meetings/meeting_all_sample}
+
+\lstinputlisting[language=java]{code/ConceptRampMotorSpeed.java}
+% Ask yourself questions like: What worked, what didn’t? 
+%Do not be afraid to include your failures. 
+%When something didn’t work, how did you problem-solve? 
+%What modifications are you planning on making?  
+%How has your robot changed over the course of the season? 
+%The documentation should be detailed enough that somebody could look at your notebook and be able to build your robot from it.
+% This documentation should include: 
+%  Sketches 
+% Discussions and Team meetings 
+% Design evolution 
+%  Software development 
+%processes, obstacles 
+%Start a fresh page in the Engineering Section at every meeting. The date, and start/stop times recorded when starting a new page.
+%Include highlights from the meeting. What was talked about? What did you do? What was 
+%planned and/or accomplished during your time together? 
+%Highlight unique design or playing strategy.
+%All designs and changes with detailed notes, calculations,  and sketches if possible.
+%explain the underlying science, math, and strategies your Team is using as well as why you are doing what you are doing. 
+%Pictures or sketches of the Robot designs,
+%electrical wiring diagrams 
+%software development describe your code.  
+%Entries should be made by every Team member, initialed, and dated.
+%showing that your Team has multiple members sharing the responsibility showcases sustainability of your Team.
+
+%A Team Section that includes information about the Team (required).
+\part{Team Section}
+\input{team_members/member_all_sample}
+\input{team_members/coach_all_sample}
+%Introducing each Team member with a Pictures and  brief  biography of their name, age (or school year), role on the Team, interests, and reasons for joining an FIRST Tech Challenge Team. 
+%Introducing each Mentor with a brief  biography of their name, age (or school year), role on the Team, interests, and reasons for joining an FIRST Tech Challenge Team.
+% Discuss and show Team activities that are done throughout the Team’s season.
+% Each Team member’s thoughts throughout the journey for the entire season 
+
+%Outreach activities (required). 
+\part{Outreach Section}
+%These can include what your Team outreach efforts include, 
+%Team building activities, or more. 
+
+%A Business plan (not required)
+\part{Business Plan Section}
+% How do you plan to fund your way to each event? 
+% Direction the Team wants to take. 
+% Outlining Team Goals. 
+% Type of outreach Team wants to focus on. 
+% Creating a Team budget. 
+% Fundraising needs. 
+% Seeking out Sponsors.
+%o  How much money does your Team need to get started and for what? (ie: a budget) 
+%o  How much money does your Team need to sustain it for multiple years? 
+%o  How much money does your Team plan to raise through fundraising efforts? 
+%o  How much money does your Team anticipate raising through grant opportunities? 
+%o  How much money/in-kind donations does your Team plan to raise through sponsorship? 
+%o  How will you promote a business/organization if you receive a sponsorship? (Logo on Team t-shirts and flare, etc.) 
+%Make sure to identify what must be purchased, such as tools and major components, not only simple categories like parts, travel lodging, etc.  
+%It should include the budget, the fundraising plan, 
+%contingencies if the Team does not reach their fund raising plan, and what they will do if they have excess.
+
+%A Strategic plan (not required)
+\part{Strategic Plan Section}
+%Your Strategic Plan may also include milestones. These may they be short term (i.e. competing in at least two events this season) to one year plan (i.e. making it to a Regional Championship and fundraising the costs) or even further (i.e. plans to create and foster additional FIRST Tech Challenge Teams).
+
+%A Sustainability plan (not required)  
+\part{Sustainability Plan Section}
+%When considering including a Sustainability Plan, ask yourself: 
+% How does your Team plan on continuing past this season? 
+% Are you training younger Team members in key roles as members graduate out? 
+% Are there plans for recruiting new members? What are they? 
+% Does your Team have plans on recruiting additional Mentors? 
+% How are you fundraising the costs of next season? Registration? New parts? 
+% How are you and your Team leaving a legacy that will last beyond just this season? 
+\part{End}
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\chapter*{Bibliography}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
+
+%------------------------------------------------
+
+\section*{Articles}
+\addcontentsline{toc}{section}{Articles}
+%\printbibliography[heading=bibempty,type=article]
+
+%------------------------------------------------
+
+\section*{Books}
+\addcontentsline{toc}{section}{Books}
+%\printbibliography[heading=bibempty,type=book]
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+%NOT Used
+%\cleardoublepage
+%\phantomsection
+%\setlength{\columnsep}{0.75cm}
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+%\printindex
+%----------------------------------------------------------------------------------------
+\end{document}
